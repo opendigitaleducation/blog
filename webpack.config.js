@@ -16,7 +16,8 @@ module.exports = {
         "moment": "entcore",
         "underscore": "entcore",
         "jquery": "entcore",
-        "angular": "angular"
+        "angular": "angular",
+        "ode-ngjs-front": 'window.entcore["ode-ngjs-front"]'
     },
     resolve: {
         modulesDirectories: ['node_modules'],

@@ -84,7 +84,7 @@ interface BlogControllerScope extends LibraryControllerScope {
 }
 //=== Utils
 function safeApply(that) {
-	return new Promise((resolve, reject) => {
+	return new Promise<void>((resolve, reject) => {
 		let phase = that.$root.$$phase;
 		if (phase === '$apply' || phase === '$digest') {
 			if (resolve && (typeof (resolve) === 'function')) resolve();

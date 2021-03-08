@@ -4,6 +4,7 @@ import { blogPublicController } from './controllers/publicBlog';
 import { IdAndLibraryResourceInformation } from 'entcore/types/src/ts/library/library.types';
 import { LibraryServiceProvider } from 'entcore/types/src/ts/library/library.service';
 import { Blog } from './models';
+import { Samples } from "ode-ngjs-front";
 
 ng.configs.push(ng.config(['libraryServiceProvider', function (libraryServiceProvider: LibraryServiceProvider<Blog>) {
     libraryServiceProvider.setInvokableResourceInformationGetterFromResource(function () {
@@ -55,6 +56,8 @@ routes.define(function ($routeProvider) {
 
 ng.controllers.push(blogController);
 ng.controllers.push(blogPublicController);
+
+ng.directives.push( ng.directive("saySomething", Samples.SaySomething.DirectiveFactory) );
 
 console.log("Initializing model");
 
