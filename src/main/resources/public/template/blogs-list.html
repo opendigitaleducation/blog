@@ -76,23 +76,23 @@
 	<section class="margin-four">
 		<div class="twelve cell chips">
 			<div ng-hide="isTrashFolder() || (hasFiltersActive() && !currentFolder.ressources.all.length && !currentFolder.children.all.length)">
-				<label class="chip" ng-click="currentFolder.ressources.refreshFilters()"
+				<label class="chip"
 					ng-class="{ selected: filters.mine }">
 					<i class="mine" tooltip="filters.mine"></i>
 					<i18n>filters.mine</i18n>
-					<input type="checkbox" ng-model="filters.mine" />
+					<input type="checkbox" ng-change="currentFolder.ressources.refreshFilters()" ng-model="filters.mine" />
 				</label>
-				<label class="chip" ng-click="currentFolder.ressources.refreshFilters()"
+				<label class="chip"
 					ng-class="{ selected: filters.shared }">
 					<i class="ic-share" tooltip="filters.sharedBlogs"></i>
 					<i18n>filters.sharedBlogs</i18n>
-					<input type="checkbox" ng-model="filters.shared" />
+					<input type="checkbox" ng-change="currentFolder.ressources.refreshFilters()" ng-model="filters.shared" />
 				</label>
-				<label class="chip" ng-click="currentFolder.ressources.refreshFilters()"
+				<label class="chip"
 					ng-class="{ selected: filters.public }">
 					<i class="public" tooltip="filters.publicBlogs"></i>
 					<i18n>filters.publicBlogs</i18n>
-					<input type="checkbox" ng-model="filters.public" />
+					<input type="checkbox" ng-change="currentFolder.ressources.refreshFilters()" ng-model="filters.public" />
 				</label>
 			</div>
 			<container template="library/folder-content"></container>
