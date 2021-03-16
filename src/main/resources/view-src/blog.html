@@ -4,6 +4,8 @@
 		<title>{{#i18n}}blog.title{{/i18n}}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		
+		<link rel="stylesheet" href="/explorer/public/index.css">
 
 		<script src="assets/ode-ts-client.js" type="text/javascript"></script>
 		<script src="assets/ode-ngjs-front.js" type="text/javascript"></script>
@@ -22,12 +24,17 @@
 			}
 		</style>
 	</head>
-	<body ng-controller="BlogController">
+	<body ng-controller="BlogController" class="ode-bootstrap-neo">
 	<portal>
 	<div class="row rigid-grid">
 		<container template="main"></container>
 	</div>
 	</portal>
 	<library-publish warning="{{#i18n}}blog.publish.warning{{/i18n}}"></library-publish>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 	</body>
 </html>
