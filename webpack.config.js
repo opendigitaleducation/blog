@@ -5,10 +5,11 @@ module.exports = {
     context: path.resolve(__dirname, './src/main/resources/public/'),
     entry: {
         application: './ts/app.ts',
-        behaviours: './ts/behaviours.ts'
+        behaviours: './ts/behaviours.ts',
+        "explorer.agent": './ts/explorer.agent.ts'
     },
     output: {
-        filename: './[name].js'
+        filename: './[name].js',
     },
     externals: {
         "entcore/entcore": "entcore",
@@ -17,6 +18,7 @@ module.exports = {
         "underscore": "entcore",
         "jquery": "entcore",
         "angular": "angular",
+        "ode-ts-client": 'window.entcore["ode-ts-client"]',
         "ode-ngjs-front": 'window.entcore["ode-ngjs-front"]'
     },
     resolve: {

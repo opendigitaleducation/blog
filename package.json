@@ -24,7 +24,8 @@
   "devDependencies": {
     "@types/jquery": "^2.0.34",
     "natives": "^1.1.6",
-    "ode-ngjs-front": "^0.2.0-explorer.0"
+    "ode-ngjs-front": "^0.2.0-explorer.0",
+    "ode-ts-client": "^0.2.0-explorer.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
