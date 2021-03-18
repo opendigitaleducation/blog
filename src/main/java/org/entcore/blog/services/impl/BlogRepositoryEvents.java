@@ -168,9 +168,16 @@ public class BlogRepositoryEvents extends MongoDbRepositoryEvents {
 
 	@Override
 	public void deleteUsers(JsonArray users) {
-		if(users == null || users.size() == 0) {
+		if(users == null) {
 			return;
 		}
+		for(int i = users.size(); i-- > 0;)
+		{
+			if(users.hasNull(i))
+				users.remove(i);
+		}
+		if(users.size() == 0)
+			return;
 
 		final String[] userIds = new String[users.size()];
 		for (int i = 0; i < users.size(); i++) {
