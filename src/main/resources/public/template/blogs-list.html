@@ -1,3 +1,4 @@
+<!--
 <script type="text/ng-template" id="folder-tree">
     <div ng-if="folder.contains(currentFolder)">
         <li data-ng-repeat="folder in folder.children.all">
@@ -7,16 +8,17 @@
                dragdrop="dropTo(folder, $originalEvent)">
                 <i class="arrow" ng-if="folder.children.all.length"></i> [[folder.name]]
             </a>
-            <!-- ng-if="folder.contains(currentFolder)"-->
+            < !-- ng-if="folder.contains(currentFolder)"-- >
             <ul ng-class="{ selected: folder.contains(currentFolder), closed: !folder.contains(currentFolder) }"
                 ng-include="'folder-tree'"></ul>
         </li>
     </div>
 </script>
+-->
 
 <!-- say-something what="Hello" ng-model="currentFolder.name"></say-something -->
 
-<folder-explorer app="blog" resource="blog"></folder-explorer>
+<ode-explorer app="blog" resource="blog"></ode-explorer>
 
 <!--TITLE
 <div class="row">
@@ -106,14 +108,14 @@
 		</div>
 	</section>
 </div>
--->
 
 <div class="emptyscreen" ng-if="showBlogLoader()">
 	<div class="absolute">
 		<img skin-src="/img/illustrations/loading.gif" />
 	</div>
 </div>
-<!-- Empty screen Création -->
+-->
+<!-- Empty screen Création
 <div class="emptyscreen" ng-if="showEmptyScreen()" workflow="blog.create">
 	<h2 class="emptyscreen-header">
 		<i18n>empty.blog.creation.title</i18n>
@@ -126,7 +128,8 @@
 		<i18n>blog.create.blog</i18n>
 	</a>
 </div>
-<!-- Empty screen Consultation -->
+ -->
+ <!-- Empty screen Consultation
 <div class="emptyscreen" ng-if="showEmptyScreen()" workflow-not="blog.create">
 	<h2 class="emptyscreen-header">
 		<i18n>empty.blog.consultation.title</i18n>
@@ -136,8 +139,9 @@
 		<i18n>empty.blog.consultation</i18n>
 	</p>
 </div>
+ -->
 <!--###############LIGHTBOX AND CONFIRMATION###################-->
-<!--RENAME LIGHTBOX-->
+<!--RENAME LIGHTBOX
 <lightbox show="displayLib.lightbox.renameFolder" on-close="lightbox('renameFolder')">
 	<h2>
 		<i18n>rename</i18n>
@@ -153,11 +157,13 @@
 
 	</div>
 </lightbox>
-<!--SHARE LIGHTBOX-->
+-->
+<!--SHARE LIGHTBOX
 <lightbox show="displayLib.showShare" ng-if="displayLib.showShare" on-close="displayLib.showShare = false">
 	<container template="library/share"></container>
 </lightbox>
-<!--NEW FOLDER LIGHTBOX-->
+-->
+<!--NEW FOLDER LIGHTBOX
 <lightbox show="displayLib.lightbox.newFolder" on-close="lightbox('newFolder')">
 	<form ng-submit="createFolder()">
 		<h2>
@@ -176,13 +182,15 @@
 		</div>
 	</form>
 </lightbox>
-<!--MOVE LIGHTBOX-->
+-->
+<!--MOVE LIGHTBOX
 <lightbox show="displayLib.lightbox.move" on-close="lightbox('move')">
 	<div ng-if="displayLib.lightbox.move">
 		<container template="library/move"></container>
 	</div>
 </lightbox>
-<!--CONFIRM REMOVE PUBLIC-->
+-->
+<!--CONFIRM REMOVE PUBLIC
 <lightbox show="display.confirmRemoveBlogPublic" on-close="display.confirmRemoveBlogPublic = false">
 	<div class="medium-block-container">
 		<h2>
@@ -201,7 +209,8 @@
 		</div>
 	</div>
 </lightbox>
-<!--CONFIRM REMOVE PUBLIC SELECTION-->
+-->
+<!--CONFIRM REMOVE PUBLIC SELECTION
 <lightbox show="display.confirmRemoveBlogsPublic" on-close="display.confirmRemoveBlogsPublic = false">
 	<div class="medium-block-container">
 		<h2>
@@ -220,3 +229,4 @@
 		</div>
 	</div>
 </lightbox>
+-->

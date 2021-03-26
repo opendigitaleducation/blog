@@ -44,7 +44,7 @@ gulp.task('build', ['rev'], () => {
         .pipe(revReplace({manifest: gulp.src("./rev-manifest.json") }))
         .pipe(gulp.dest("./src/main/resources/view"));
 
-    var copyBehaviours = gulp.src('./src/main/resources/public/dist/behaviours.js')
+    var copyBehaviours = gulp.src('./src/main/resources/public/dist/+(behaviours|explorer.agent).js')
         .pipe(gulp.dest('./src/main/resources/public/js'));
 
     return merge[refs, copyBehaviours];
