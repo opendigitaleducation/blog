@@ -1,5 +1,5 @@
 import http from 'axios';
-import { AbstractBusAgent, ACTION, GetContextParameters, IContext, ManagePropertiesParameters, ManagePropertiesResult, PROP_MODE, PROP_TYPE, RESOURCE } from 'ode-ts-client';
+import { AbstractBusAgent, ACTION, GetContextParameters, IActionParameters, IActionResult, IContext, ManagePropertiesParameters, ManagePropertiesResult, PROP_MODE, PROP_TYPE, RESOURCE } from 'ode-ts-client';
 import { IHandler } from 'ode-ts-client/dist/ts/foundation/Agent';
 
 class ExplorerAgent extends AbstractBusAgent {
@@ -12,12 +12,17 @@ class ExplorerAgent extends AbstractBusAgent {
 
     protected registerHandlers(): void {
         this.setHandler( ACTION.OPEN,   	this.onOpen as unknown as IHandler );
+        this.setHandler( ACTION.CREATE,   	this.onCreate as unknown as IHandler );
         this.setHandler( ACTION.MANAGE,     this.onManage as unknown as IHandler );
     }
 
     onOpen( parameters:GetContextParameters ): void {
         // TODO navigate to the correct URL. 
-        // The "open" action should not be called by mobile clients...
+    }
+
+    onCreate( parameters:IActionParameters ): Promise<IActionResult> {
+        const res:IActionResult = "/blog#/edit/new";
+        return Promise.resolve().then( () => res );
     }
 
     onManage( parameters:ManagePropertiesParameters ): Promise<ManagePropertiesResult> {
