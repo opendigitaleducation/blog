@@ -363,6 +363,17 @@ export const blogController = ng.controller('BlogController', ['$scope', '$sce',
 			//dont load blog using pagination (see library.ts)
 			//model.blogs.syncPag(function () { $scope.$apply(); }, false, $scope.display.search);
 		},
+		explore: function () {
+			model.blogs.deselectAll();
+			template.open('main', 'blogs-explore');
+			$scope.display.filters.submitted = true;
+			$scope.display.filters.draft = true;
+			$scope.display.filters.published = true;
+			$scope.display.filters.all = true;
+			$scope.display.postSearch = '';
+			//dont load blog using pagination (see library.ts)
+			//model.blogs.syncPag(function () { $scope.$apply(); }, false, $scope.display.search);
+		},
 		editBlog: function (params) {
 			$scope.display.editingPublicBlog = undefined;
 			$scope.blog = model.blogs.findWhere({ _id: params.blogId });
