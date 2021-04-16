@@ -1,5 +1,5 @@
 import http from 'axios';
-import { AbstractBusAgent, ACTION, GetContextParameters, IActionParameters, IActionResult, IContext, ManagePropertiesParameters, ManagePropertiesResult, PROP_MODE, PROP_TYPE, RESOURCE } from 'ode-ts-client';
+import { AbstractBusAgent, ACTION, GetContextParameters, IActionParameters, IActionResult, IContext, ManagePropertiesParameters, ManagePropertiesResult, PROP_KEY, PROP_MODE, PROP_TYPE, RESOURCE } from 'ode-ts-client';
 import { IHandler } from 'ode-ts-client/dist/ts/foundation/Agent';
 
 class ExplorerAgent extends AbstractBusAgent {
@@ -27,10 +27,12 @@ class ExplorerAgent extends AbstractBusAgent {
 
     onManage( parameters:ManagePropertiesParameters ): Promise<ManagePropertiesResult> {
         const res:ManagePropertiesResult = {
-            properties:[{
-                property:"name", mode:PROP_MODE.READWRITE, type:PROP_TYPE.TEXT
+            genericProps:[{
+                key:PROP_KEY.TITLE
             },{
-                property:"thumbnail", mode:PROP_MODE.READONLY, type:PROP_TYPE.IMAGE
+                key:PROP_KEY.IMAGE
+            },{
+                key:PROP_KEY.URL
             }]
         }
         return Promise.resolve().then( () => res );
